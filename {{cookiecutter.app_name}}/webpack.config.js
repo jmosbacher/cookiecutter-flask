@@ -24,7 +24,7 @@ module.exports = {
   entry: {
     main_js: './assets/js/main',
     main_css: [
-      path.join(__dirname, 'node_modules', 'font-awesome', 'css', 'font-awesome.css'),
+      path.join(__dirname, 'node_modules', '@fortawesome', 'fontawesome-free', 'css', 'all.css'),
       path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'css', 'bootstrap.css'),
       path.join(__dirname, 'assets', 'css', 'style.css'),
     ],
@@ -52,7 +52,6 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: debug,
             },
           },
           'css-loader!less-loader',
@@ -64,7 +63,6 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: debug,
             },
           },
           'css-loader',
@@ -74,9 +72,10 @@ module.exports = {
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff' } },
       {
         test: /\.(ttf|eot|svg|png|jpe?g|gif|ico)(\?.*)?$/i,
-        loader: `file-loader?context=${rootAssetPath}&name=[path][name].[ext]`
+        loader: 'file-loader',
+        options: { context: rootAssetPath, name: '[path][name].[ext]' }
       },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ["@babel/preset-env"], cacheDirectory: true } },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', options: { presets: ["@babel/preset-env"], cacheDirectory: true } },
     ],
   }
 };

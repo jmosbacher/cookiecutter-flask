@@ -2,8 +2,11 @@
 
 A Flask template for [cookiecutter](https://github.com/audreyr/cookiecutter). (Supports Python ≥ 3.6)
 
-[![Build Status](https://travis-ci.org/cookiecutter-flask/cookiecutter-flask.svg?branch=master)](https://travis-ci.org/cookiecutter-flask/cookiecutter-flask)
+![Build Status](https://github.com/cookiecutter-flask/cookiecutter-flask/workflows/Lint%20cookiecutter%20template/badge.svg)
+![CodeQL](https://github.com/cookiecutter-flask/cookiecutter-flask/workflows/CodeQL/badge.svg)
 [![CalVer](https://img.shields.io/badge/calver-YY.MINOR.MICRO-22bfda.svg)](http://calver.org)
+
+See [this repo](https://github.com/jamescurtin/demo-cookiecutter-flask) for an example project generated from the most recent version of the template.
 
 ## Use it now
 
@@ -78,6 +81,15 @@ After you have generated the project code, a few more steps must be taken before
 MIT licensed.
 
 ## Changelog
+
+### Unreleased
+
+- Update all node dependencies to latest versions
+- Switch to using Github Actions for template CI
+- Remove support for Node 10 as a Cookiecutter option
+- Refactored Docker image to use multistage builds more efficiently
+- Projects generated with the template use Github actions for CI
+- Upgrade Webpack to 5.x
 
 ### 18.0.0 (09/09/2018)
 

@@ -51,6 +51,7 @@ pipenv shell
 pip install -r requirements/dev.txt
 {%- endif %}
 npm install
+npm run-script build
 npm start  # run the webpack dev server and flask server using concurrently
 ```
 
@@ -226,7 +227,7 @@ Deployment by using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cl
 * Deploy on Heroku by pushing to the `heroku` branch
 
     ```bash
-    git push heroku master
+    git push heroku main
     ```
 
 {%- endif %}
